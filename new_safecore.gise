@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="new_safecore.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="AEQZ.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="ALU.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="BUF5.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CNT32.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CNT5.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CONTROL_SDLXSM.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="CSA32.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="DLX.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="DLX_control.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="FULL_DATAPATH.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="GPR_env.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="IO_LOGIC_U.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="IO_SIM.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="IR_env.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="LA.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="LOAD_STORE_machine.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MAC.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MMU.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MMU_AT.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MUX32bit.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MUX3bit.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MUX4_32bit.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="MUX5bit.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="PC_ENVm.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="RAM32x32.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="REG32CE.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="REG32RST.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="REGB.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="SHIFTER_env.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Step_CNT5.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="Top_Level_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="Top_Level_safecore.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="Top_Level_safecore.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="Top_Level_safecore.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="Top_Level_safecore.ncd" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="Top_Level_safecore.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="Top_Level_safecore.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="Top_Level_safecore.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="Top_Level_safecore.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAR_REPORT" xil_pn:name="Top_Level_safecore.par" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="Top_Level_safecore.pcf" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Top_Level_safecore.prj"/>
+    <file xil_pn:fileType="FILE_TRCE_MISC" xil_pn:name="Top_Level_safecore.ptwx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="Top_Level_safecore.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="Top_Level_safecore.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="Top_Level_safecore.twr" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="Top_Level_safecore.twx" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="Top_Level_safecore.unroutes" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="Top_Level_safecore.ut" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_XPI" xil_pn:name="Top_Level_safecore.xpi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="Top_Level_safecore.xst"/>
+    <file xil_pn:fileType="FILE_NCD" xil_pn:name="Top_Level_safecore_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="Top_Level_safecore_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="Top_Level_safecore_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="Top_Level_safecore_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="Top_Level_safecore_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Top_Level_safecore_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Top_Level_safecore_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="Top_Level_safecore_pad.csv" xil_pn:subbranch="Par"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="Top_Level_safecore_pad.txt" xil_pn:subbranch="Par"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Top_Level_safecore_par.xrpt"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="Top_Level_safecore_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="Top_Level_safecore_usage.xml"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="Top_Level_safecore_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="address_MUX.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="comparator.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="const_011.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="const_reg.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="control.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="control_datapth.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="control_unit.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="id_num.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="master_ver.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="monitor_slave.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="read_machine.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="read_stateMachine.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="reg5.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="slvaeAO.sym" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="top_level_safecore.bgn" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="top_level_safecore.bit" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_DRC" xil_pn:name="top_level_safecore.drc" xil_pn:subbranch="FPGAConfiguration"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="write_machine.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="write_stateMachine.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1782826039" xil_pn:in_ck="3477065158859963524" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="218889844848850827" xil_pn:start_ts="1782826037">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826039" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-2367045282277399224" xil_pn:start_ts="1782826039">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826039" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1782826039">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826039" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-2924366741406353139" xil_pn:start_ts="1782826039">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826039" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-1970394750299821092" xil_pn:start_ts="1782826039">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826039" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="3911675389657989202" xil_pn:start_ts="1782826039">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826064" xil_pn:in_ck="4576788788781153752" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2668654186484919866" xil_pn:start_ts="1782826039">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Top_Level_safecore.lso"/>
+      <outfile xil_pn:name="Top_Level_safecore.ngc"/>
+      <outfile xil_pn:name="Top_Level_safecore.ngr"/>
+      <outfile xil_pn:name="Top_Level_safecore.prj"/>
+      <outfile xil_pn:name="Top_Level_safecore.stx"/>
+      <outfile xil_pn:name="Top_Level_safecore.syr"/>
+      <outfile xil_pn:name="Top_Level_safecore.xst"/>
+      <outfile xil_pn:name="Top_Level_safecore_xst.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826064" xil_pn:in_ck="-199694982402974165" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5508416376433539017" xil_pn:start_ts="1782826064">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826071" xil_pn:in_ck="-5495641574416720574" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-4405446556662459053" xil_pn:start_ts="1782826064">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Top_Level_safecore.bld"/>
+      <outfile xil_pn:name="Top_Level_safecore.ngd"/>
+      <outfile xil_pn:name="Top_Level_safecore_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826109" xil_pn:in_ck="1698522067933348707" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="325589658960453222" xil_pn:start_ts="1782826071">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Top_Level_safecore.pcf"/>
+      <outfile xil_pn:name="Top_Level_safecore_map.map"/>
+      <outfile xil_pn:name="Top_Level_safecore_map.mrp"/>
+      <outfile xil_pn:name="Top_Level_safecore_map.ncd"/>
+      <outfile xil_pn:name="Top_Level_safecore_map.ngm"/>
+      <outfile xil_pn:name="Top_Level_safecore_map.xrpt"/>
+      <outfile xil_pn:name="Top_Level_safecore_summary.xml"/>
+      <outfile xil_pn:name="Top_Level_safecore_usage.xml"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826141" xil_pn:in_ck="-8855994833533876324" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="-1833634747333805430" xil_pn:start_ts="1782826109">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Top_Level_safecore.ncd"/>
+      <outfile xil_pn:name="Top_Level_safecore.pad"/>
+      <outfile xil_pn:name="Top_Level_safecore.par"/>
+      <outfile xil_pn:name="Top_Level_safecore.ptwx"/>
+      <outfile xil_pn:name="Top_Level_safecore.unroutes"/>
+      <outfile xil_pn:name="Top_Level_safecore.xpi"/>
+      <outfile xil_pn:name="Top_Level_safecore_pad.csv"/>
+      <outfile xil_pn:name="Top_Level_safecore_pad.txt"/>
+      <outfile xil_pn:name="Top_Level_safecore_par.xrpt"/>
+      <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826156" xil_pn:in_ck="5347713252817030580" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1782826141">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Top_Level_safecore.ut"/>
+      <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
+      <outfile xil_pn:name="top_level_safecore.bgn"/>
+      <outfile xil_pn:name="top_level_safecore.bit"/>
+      <outfile xil_pn:name="top_level_safecore.drc"/>
+      <outfile xil_pn:name="usage_statistics_webtalk.html"/>
+      <outfile xil_pn:name="webtalk.log"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1782826141" xil_pn:in_ck="-7147130963088663969" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416184" xil_pn:start_ts="1782826132">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Top_Level_safecore.twr"/>
+      <outfile xil_pn:name="Top_Level_safecore.twx"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+    </transform>
+  </transforms>
+
+</generated_project>

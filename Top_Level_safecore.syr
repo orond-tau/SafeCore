@@ -1,0 +1,1900 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.27 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.27 secs
+ 
+--> Reading design: Top_Level_safecore.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top_Level_safecore.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top_Level_safecore"
+Output Format                      : NGC
+Target Device                      : xc6slx25-2-ftg256
+
+---- Source Options
+Top Module Name                    : Top_Level_safecore
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\ADSU16.v" into library work
+Parsing module <ADSU16>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CSA32.v" into library work
+Parsing module <CSA32>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\comparator.v" into library work
+Parsing module <comparator>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\SHIFTER_env.v" into library work
+Parsing module <SHIFTER_env>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\secded_codec.v" into library work
+Parsing module <secded_encoder>.
+Parsing module <secded_decoder>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\reg5.v" into library work
+Parsing module <reg5>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\RE32RST.v" into library work
+Parsing module <REG32RST>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\RAM32x32.v" into library work
+Parsing module <RAM32x32>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\PC_ENVm.v" into library work
+Parsing module <PC_ENVm>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MUX5bit.v" into library work
+Parsing module <MUX5bit>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MUX4_32bit.v" into library work
+Parsing module <MUX4_32bit>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MUX3bit.v" into library work
+Parsing module <MUX3bit>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MUX32bit.v" into library work
+Parsing module <MUX32bit>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MMU.v" into library work
+Parsing module <MMU>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MAC.v" into library work
+Parsing module <MAC>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\IR_env.v" into library work
+Parsing module <IR_env>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\id_num.v" into library work
+Parsing module <id_num>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CONTROL_SDLXSM.v" into library work
+Parsing module <CONTROL_SDLXSM>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\const_011.v" into library work
+Parsing module <const_011>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CNT5.v" into library work
+Parsing module <CNT5>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\BUF5.v" into library work
+Parsing module <BUF5>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\ALU.v" into library work
+Parsing module <ALU>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\AEQZ.v" into library work
+Parsing module <AEQZ>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\wwdt_safecore.v" into library work
+Parsing module <wwdt_safecore>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\secded_bus_wrapper.v" into library work
+Parsing module <secded_bus_wrapper>.
+Analyzing Verilog file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\fim_safecore.v" into library work
+Parsing module <fim_safecore>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SyncToClk.vhd" into library work
+Parsing package <SyncToClockPckg>.
+Parsing entity <SyncToClock>.
+Parsing architecture <arch> of entity <synctoclock>.
+Parsing entity <SyncBusToClock>.
+Parsing architecture <arch> of entity <syncbustoclock>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\Common.vhd" into library work
+Parsing package <CommonPckg>.
+Parsing package body <CommonPckg>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\sdram_adapter_U.vhd" into library work
+Parsing entity <sdram_adapter_U>.
+Parsing architecture <Behavioral> of entity <sdram_adapter_u>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" into library work
+Parsing package <SdramCntlPckg>.
+Parsing entity <SdramCntl_U>.
+Parsing architecture <arch> of entity <sdramcntl_u>.
+Parsing entity <DualPort>.
+Parsing architecture <arch> of entity <dualport>.
+Parsing entity <DualPortSdram>.
+Parsing architecture <arch> of entity <dualportsdram>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\Interface_Ctrl_U.vhd" into library work
+Parsing entity <Interface_Ctrl_U>.
+Parsing architecture <Behavioral> of entity <interface_ctrl_u>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\HostIoToDut_U.vhd" into library work
+Parsing package <HostIoPckg>.
+Parsing entity <BscanToHostIo>.
+Parsing architecture <arch> of entity <bscantohostio>.
+Parsing entity <HostIoHdrScanner>.
+Parsing architecture <arch> of entity <hostiohdrscanner>.
+Parsing entity <HostIoToRamCore>.
+Parsing architecture <arch> of entity <hostiotoramcore>.
+Parsing entity <RamCtrlSync>.
+Parsing architecture <arch> of entity <ramctrlsync>.
+Parsing entity <HostIoToRam>.
+Parsing architecture <arch> of entity <hostiotoram>.
+Parsing entity <HostIoToDut_U>.
+Parsing architecture <arch> of entity <hostiotodut_u>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\ClkGen_U.vhd" into library work
+Parsing package <ClkGenPckg>.
+Parsing entity <ClkGen_U>.
+Parsing architecture <arch> of entity <clkgen_u>.
+Parsing entity <ClkToLogic>.
+Parsing architecture <arch> of entity <clktologic>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\IO_LOGIC_U.vhd" into library work
+Parsing entity <Sync_U>.
+Parsing architecture <BEHAVIORAL> of entity <sync_u>.
+Parsing entity <IO_LOGIC_U>.
+Parsing architecture <BEHAVIORAL> of entity <io_logic_u>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf" into library work
+Parsing entity <LA_MUSER_Top_Level>.
+Parsing architecture <BEHAVIORAL> of entity <la_muser_top_level>.
+Parsing entity <slvaeAO_MUSER_Top_Level>.
+Parsing architecture <BEHAVIORAL> of entity <slvaeao_muser_top_level>.
+Parsing entity <monitor_slave_MUSER_Top_Level>.
+Parsing architecture <BEHAVIORAL> of entity <monitor_slave_muser_top_level>.
+Parsing entity <GPR_env_MUSER_Top_Level>.
+Parsing architecture <BEHAVIORAL> of entity <gpr_env_muser_top_level>.
+Parsing entity <FULL_DATAPATH_MUSER_Top_Level>.
+Parsing architecture <BEHAVIORAL> of entity <full_datapath_muser_top_level>.
+Parsing entity <control_unit_MUSER_Top_Level>.
+Parsing architecture <BEHAVIORAL> of entity <control_unit_muser_top_level>.
+Parsing entity <DLX_MUSER_Top_Level>.
+Parsing architecture <BEHAVIORAL> of entity <dlx_muser_top_level>.
+Parsing VHDL file "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" into library work
+Parsing entity <Top_Level_safecore>.
+Parsing architecture <BEHAVIORAL> of entity <top_level_safecore>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Top_Level_safecore> (architecture <BEHAVIORAL>) from library <work>.
+WARNING:HDLCompiler:1127 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" Line 482: Assignment to wwdt_card_sel ignored, since the identifier is never used
+
+Elaborating entity <IO_LOGIC_U> (architecture <BEHAVIORAL>) from library <work>.
+
+Elaborating entity <ClkGen_U> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <ClkToLogic> (architecture <arch>) from library <work>.
+
+Elaborating entity <HostIoToDut_U> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <BscanToHostIo> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <HostIoHdrScanner> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <Interface_Ctrl_U> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\Interface_Ctrl_U.vhd" Line 244: reset_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\Interface_Ctrl_U.vhd" Line 245: ready_clk_i should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\Interface_Ctrl_U.vhd" Line 252: address_in_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\Interface_Ctrl_U.vhd" Line 253: data_in_s should be on the sensitivity list of the process
+
+Elaborating entity <sdram_adapter_U> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\sdram_adapter_U.vhd" Line 107. Case statement is complete. others clause is never selected
+
+Elaborating entity <Sync_U> (architecture <BEHAVIORAL>) from library <work>.
+
+Elaborating entity <RamCtrlSync> (architecture <arch>) from library <work>.
+
+Elaborating entity <SyncToClock> (architecture <arch>) from library <work>.
+
+Elaborating entity <SdramCntl_U> (architecture <arch>) with generics from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 436: ba_x should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 460: rdinprogress_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 493: bank_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 636: activateinprogress_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 650: ba_x should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 652: doactivate_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 654: activateinprogress_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 658: bankindex_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 664: rdinprogress_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 679: ba_x should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 681: doactivate_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 683: activateinprogress_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 687: bankindex_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 691: rdinprogress_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 707: doselfrfsh_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 709: activateinprogress_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 731: row_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 732: bank_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 733: row_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 734: bankindex_s should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 754: doselfrfsh_s should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd" Line 771. Case statement is complete. others clause is never selected
+Going to verilog side to elaborate module secded_bus_wrapper
+
+Elaborating module <secded_bus_wrapper>.
+
+Elaborating module <secded_encoder>.
+
+Elaborating module <secded_decoder>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module fim_safecore
+
+Elaborating module <fim_safecore>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module wwdt_safecore
+
+Elaborating module <wwdt_safecore>.
+WARNING:HDLCompiler:1127 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\wwdt_safecore.v" Line 111: Assignment to reg_kick ignored, since the identifier is never used
+Back to vhdl to continue elaboration
+
+Elaborating entity <monitor_slave_MUSER_Top_Level> (architecture <BEHAVIORAL>) from library <work>.
+
+Elaborating entity <LA_MUSER_Top_Level> (architecture <BEHAVIORAL>) from library <work>.
+Going to verilog side to elaborate module RAM32x32
+
+Elaborating module <RAM32x32>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module CNT5
+
+Elaborating module <CNT5>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX5bit
+
+Elaborating module <MUX5bit>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module reg5
+
+Elaborating module <reg5>.
+Back to vhdl to continue elaboration
+
+Elaborating entity <slvaeAO_MUSER_Top_Level> (architecture <BEHAVIORAL>) from library <work>.
+Going to verilog side to elaborate module MUX4_32bit
+
+Elaborating module <MUX4_32bit>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module BUF5
+
+Elaborating module <BUF5>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module id_num
+
+Elaborating module <id_num>.
+Back to vhdl to continue elaboration
+WARNING:HDLCompiler:634 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf" Line 352: Net <STATUS[23]> does not have a driver.
+
+Elaborating entity <DLX_MUSER_Top_Level> (architecture <BEHAVIORAL>) from library <work>.
+
+Elaborating entity <control_unit_MUSER_Top_Level> (architecture <BEHAVIORAL>) from library <work>.
+Going to verilog side to elaborate module CONTROL_SDLXSM
+
+Elaborating module <CONTROL_SDLXSM(INIT=0,FETCH=1,DECODE=2,ALU=3,SHIFT=4,ALUI=5,TESTI=6,ADDRESSCMP=7,JR=8,SAVEPC=9,BRANCH=10,WBR=11,WBI=12,LOAD=13,COPYGPR2MDR=15,JALR=16,BTAKEN=17,COPYMDR2C=18,STORE=19,HALT=20)>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MAC
+
+Elaborating module <MAC(WAIT4REQ=0,WAIT4ACK=1,NEXT=2)>.
+Back to vhdl to continue elaboration
+
+Elaborating entity <FULL_DATAPATH_MUSER_Top_Level> (architecture <BEHAVIORAL>) from library <work>.
+Going to verilog side to elaborate module MUX32bit
+
+Elaborating module <MUX32bit>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module REG32RST
+
+Elaborating module <REG32RST>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module REG32RST
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module REG32RST
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module REG32RST
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX4_32bit
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX4_32bit
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module SHIFTER_env
+
+Elaborating module <SHIFTER_env>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module ALU
+
+Elaborating module <ALU>.
+WARNING:HDLCompiler:1016 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CSA32.v" Line 31: Port OFL is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CSA32.v" Line 40: Port OFL is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CSA32.v" Line 49: Port OFL is not connected to this instance
+
+Elaborating module <CSA32>.
+
+Elaborating module <ADSU16>.
+
+Elaborating module <comparator>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MMU
+
+Elaborating module <MMU>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX32bit
+Back to vhdl to continue elaboration
+
+Elaborating entity <GPR_env_MUSER_Top_Level> (architecture <BEHAVIORAL>) from library <work>.
+Going to verilog side to elaborate module RAM32x32
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module RAM32x32
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module RAM32x32
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX5bit
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX5bit
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX5bit
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module AEQZ
+
+Elaborating module <AEQZ>.
+WARNING:HDLCompiler:413 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\AEQZ.v" Line 27: Result of 32-bit expression is truncated to fit in 1-bit target.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module IR_env
+
+Elaborating module <IR_env>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX3bit
+
+Elaborating module <MUX3bit>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module REG32RST
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module MUX32bit
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module const_011
+
+Elaborating module <const_011>.
+Back to vhdl to continue elaboration
+Going to verilog side to elaborate module PC_ENVm
+
+Elaborating module <PC_ENVm>.
+Back to vhdl to continue elaboration
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Top_Level_safecore>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd".
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 495: Output port <Rsel_o> of the instance <XLXI_23> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 546: Output port <data_out> of the instance <XLXI_FIM> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 546: Output port <sack_n> of the instance <XLXI_FIM> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 565: Output port <data_out> of the instance <XLXI_WWDT> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 565: Output port <dbg_ctrl> of the instance <XLXI_WWDT> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 565: Output port <sack_n> of the instance <XLXI_WWDT> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 565: Output port <irq_out> of the instance <XLXI_WWDT> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <ALUF> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <DLX_STATE> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <func> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <IR> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <MAC_STATE> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <opcode> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <S1SEL> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <S2SEL> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <Ace> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <add> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <AEQZ> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <Asel> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <Bce> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <busy> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <Cce> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <DINce> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <GPRwe> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <IRce> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <Itype> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <jlink> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <MARce> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <MDRce> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <MDRsel> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <MR> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <MW> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <PCce> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <right> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <shift> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.vhd" line 608: Output port <test> of the instance <XLXI_70> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <ACK_N_d>.
+    Found 1-bit register for signal <secded_seen_single>.
+    Found 1-bit register for signal <secded_seen_double>.
+    Found 1-bit register for signal <rd_pending>.
+    Found 4-bit register for signal <rd_off>.
+    Found 1-bit register for signal <wwdt_wr_hit_d>.
+    Found 1-bit register for signal <fim_wr_hit_d>.
+    Found 4-bit register for signal <snoop_off>.
+    Found 1-bit register for signal <wwdt_wr>.
+    Found 1-bit register for signal <fim_wr>.
+    Found 32-bit register for signal <DO_r>.
+    Summary:
+	inferred  48 D-type flip-flop(s).
+	inferred  12 Multiplexer(s).
+Unit <Top_Level_safecore> synthesized.
+
+Synthesizing Unit <IO_LOGIC_U>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\IO_LOGIC_U.vhd".
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\IO_LOGIC_U.vhd" line 276: Output port <o> of the instance <u0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\IO_LOGIC_U.vhd" line 276: Output port <o_b> of the instance <u0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\IO_LOGIC_U.vhd" line 288: Output port <curr_state_o> of the instance <u2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\IO_LOGIC_U.vhd" line 320: Output port <sdram_done> of the instance <u3> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <IO_LOGIC_U> synthesized.
+
+Synthesizing Unit <ClkGen_U>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\ClkGen_U.vhd".
+        BASE_FREQ_G = 12.0
+        CLK_MUL_G = 10
+        CLK_DIV_G = 2
+    Summary:
+	no macro.
+Unit <ClkGen_U> synthesized.
+
+Synthesizing Unit <ClkToLogic>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\ClkGen_U.vhd".
+    Summary:
+	no macro.
+Unit <ClkToLogic> synthesized.
+
+Synthesizing Unit <HostIoToDut_U>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\HostIoToDut_U.vhd".
+        ID_G = "11111111"
+        PYLD_CNTR_LENGTH_G = 32
+        FPGA_DEVICE_G = spartan6
+        TAP_USER_INSTR_G = user1
+        SIMPLE_G = true
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\HostIoToDut_U.vhd" line 951: Output port <pyldCntr_o> of the instance <UHdrScanner> is unconnected or connected to loadless signal.
+    Found 2-bit register for signal <opcode_r>.
+    Found 1-bit register for signal <opcodeRcvd_r>.
+    Found 40-bit register for signal <shiftReg_r>.
+    Found 6-bit register for signal <bitCntr_r>.
+    Found 40-bit register for signal <vectorToDut_o>.
+    Found 1-bit register for signal <activateClk_r>.
+    Found 6-bit subtractor for signal <GND_23_o_GND_23_o_sub_8_OUT<5:0>> created at line 1018.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  90 D-type flip-flop(s).
+	inferred  12 Multiplexer(s).
+Unit <HostIoToDut_U> synthesized.
+
+Synthesizing Unit <BscanToHostIo>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\HostIoToDut_U.vhd".
+        FPGA_DEVICE_G = spartan6
+        TAP_USER_INSTR_G = user1
+    Summary:
+	no macro.
+Unit <BscanToHostIo> synthesized.
+
+Synthesizing Unit <HostIoHdrScanner>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\HostIoToDut_U.vhd".
+        ID_G = "11111111"
+        PYLD_CNTR_LENGTH_G = 32
+    Found 32-bit register for signal <pyldCntr_r>.
+    Found 1-bit register for signal <hdrRcvd_r>.
+    Found 8-bit register for signal <id_r>.
+    Found 32-bit subtractor for signal <GND_51_o_GND_51_o_sub_2_OUT<31:0>> created at line 384.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <HostIoHdrScanner> synthesized.
+
+Synthesizing Unit <Interface_Ctrl_U>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\Interface_Ctrl_U.vhd".
+WARNING:Xst:647 - Input <input_i<39:38>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <MA_i<23:21>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <MA_i<31:25>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <debug_i_sa> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <debug_i_sc> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 3-bit register for signal <curr_state>.
+    Found 4-bit register for signal <Rst_proc.resetCnt_v>.
+    Found 1-bit register for signal <done_s>.
+    Found 1-bit register for signal <Ready_clk_i_s>.
+    Found 3-bit register for signal <prev_state>.
+    Found 1-bit register for signal <in_init_s>.
+    Found 32-bit register for signal <address_in_s>.
+    Found 32-bit register for signal <data_in_s>.
+    Found 2-bit register for signal <feedback_done>.
+    Found 1-bit register for signal <in_init_st_s<0>>.
+    Found 1-bit register for signal <in_init_st_s<1>>.
+    Found 1-bit register for signal <step_en_sh_s>.
+    Found 1-bit register for signal <step_en_l_s>.
+    Found 32-bit register for signal <data_out_s>.
+    Found 1-bit register for signal <reset_s>.
+    Found finite state machine <FSM_0> for signal <curr_state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 15                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk_i (rising_edge)                            |
+    | Reset              | reset_s (positive)                             |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit subtractor for signal <GND_52_o_GND_52_o_sub_2_OUT<3:0>> created at line 169.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <DO_s<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred 113 D-type flip-flop(s).
+	inferred  32 Latch(s).
+	inferred 175 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <Interface_Ctrl_U> synthesized.
+
+Synthesizing Unit <sdram_adapter_U>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\sdram_adapter_U.vhd".
+WARNING:Xst:647 - Input <opBegun> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rdPending> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <done_d>.
+    Found 1-bit register for signal <as_d>.
+    Found 2-bit register for signal <curr_state>.
+    Found 32-bit register for signal <int_DO>.
+    Found 1-bit register for signal <XSA_done_deasserted>.
+    Found finite state machine <FSM_1> for signal <curr_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | bufclk (rising_edge)                           |
+    | Reset              | RESET (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  35 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <sdram_adapter_U> synthesized.
+
+Synthesizing Unit <Sync_U>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\IO_LOGIC_U.vhd".
+    Summary:
+	no macro.
+Unit <Sync_U> synthesized.
+
+Synthesizing Unit <RamCtrlSync>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\HostIoToDut_U.vhd".
+WARNING:Xst:647 - Input <drck_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <prevCtrlIn_v>.
+    Found 1-bit register for signal <doneOut_o>.
+    Found 1-bit register for signal <ctrlOut_o>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <RamCtrlSync> synthesized.
+
+Synthesizing Unit <SyncToClock>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SyncToClk.vhd".
+    Found 2-bit register for signal <sync_r>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <SyncToClock> synthesized.
+
+Synthesizing Unit <SdramCntl_U>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\remote_sources\_\_\lab files\IO_LOGIC_U\SdramCntl.vhd".
+        FREQ_G = 60.0
+        IN_PHASE_G = true
+        PIPE_EN_G = false
+        MAX_NOP_G = 10000
+        ENABLE_REFRESH_G = true
+        MULTIPLE_ACTIVE_ROWS_G = false
+        DATA_WIDTH_G = 16
+        NROWS_G = 8192
+        NCOLS_G = 512
+        HADDR_WIDTH_G = 24
+        SADDR_WIDTH_G = 13
+        T_INIT_G = 200000.0
+        T_RAS_G = 45.0
+        T_RCD_G = 20.0
+        T_REF_G = 64000000.0
+        T_RFC_G = 65.0
+        T_RP_G = 20.0
+        T_XSR_G = 75.0
+    Register <wrPipeline_r<0>> equivalent to <sDataDir_r> has been removed
+    Found 14-bit register for signal <rfshCntr_r>.
+    Found 14-bit register for signal <timer_r>.
+    Found 14-bit register for signal <nopCntr_r>.
+    Found 2-bit register for signal <rasTimer_r>.
+    Found 2-bit register for signal <wrTimer_r>.
+    Found 2-bit register for signal <ba_r>.
+    Found 5-bit register for signal <rdPipeline_r>.
+    Found 6-bit register for signal <cmd_r>.
+    Found 13-bit register for signal <sAddr_r>.
+    Found 16-bit register for signal <sData_r>.
+    Found 16-bit register for signal <sdramData_r>.
+    Found 3-bit register for signal <state_r>.
+    Found 9-bit register for signal <refTimer_r>.
+    Found 1-bit register for signal <activeFlag_r>.
+    Found 1-bit register for signal <opBegun_r>.
+    Found 1-bit register for signal <cke_r>.
+    Found 1-bit register for signal <sDataDir_r>.
+    Found 2-bit register for signal <activeBank_r>.
+    Found 13-bit register for signal <activeRow_r<0>>.
+    Found finite state machine <FSM_2> for signal <state_r>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 28                                             |
+    | Inputs             | 12                                             |
+    | Outputs            | 4                                              |
+    | Clock              | clk_i (rising_edge)                            |
+    | Reset              | rst_i (positive)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | initwait                                       |
+    | Power Up State     | initwait                                       |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 14-bit adder for signal <nopCntr_r[13]_GND_92_o_add_11_OUT> created at line 510.
+    Found 14-bit adder for signal <rfshCntr_r[13]_GND_92_o_add_22_OUT> created at line 556.
+    Found 2-bit subtractor for signal <GND_92_o_GND_92_o_sub_16_OUT<1:0>> created at line 526.
+    Found 2-bit subtractor for signal <GND_92_o_GND_92_o_sub_19_OUT<1:0>> created at line 539.
+    Found 9-bit subtractor for signal <GND_92_o_GND_92_o_sub_22_OUT<8:0>> created at line 550.
+    Found 14-bit subtractor for signal <GND_92_o_GND_92_o_sub_27_OUT<13:0>> created at line 565.
+    Found 14-bit subtractor for signal <GND_92_o_GND_92_o_sub_82_OUT<13:0>> created at line 746.
+    Found 13-bit 7-to-1 multiplexer for signal <state_r[2]_col_s[11]_wide_mux_91_OUT> created at line 574.
+    Found 1-bit tristate buffer for signal <sdData_io<15>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<14>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<13>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<12>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<11>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<10>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<9>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<8>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<7>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<6>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<5>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<4>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<3>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<2>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<1>> created at line 394
+    Found 1-bit tristate buffer for signal <sdData_io<0>> created at line 394
+    Found 2-bit comparator not equal for signal <n0026> created at line 493
+    Found 13-bit comparator not equal for signal <n0028> created at line 493
+    Summary:
+	inferred   7 Adder/Subtractor(s).
+	inferred 132 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred  67 Multiplexer(s).
+	inferred  16 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <SdramCntl_U> synthesized.
+
+Synthesizing Unit <secded_bus_wrapper>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\secded_bus_wrapper.v".
+    Summary:
+	inferred  32 Multiplexer(s).
+Unit <secded_bus_wrapper> synthesized.
+
+Synthesizing Unit <secded_encoder>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\secded_codec.v".
+    Summary:
+Unit <secded_encoder> synthesized.
+
+Synthesizing Unit <secded_decoder>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\secded_codec.v".
+    Summary:
+	inferred   3 Multiplexer(s).
+Unit <secded_decoder> synthesized.
+
+Synthesizing Unit <fim_safecore>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\fim_safecore.v".
+WARNING:Xst:647 - Input <addr<9:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <fim_ctrl>.
+    Found 32-bit register for signal <fim_mask>.
+    Found 32-bit register for signal <fim_delay>.
+    Found 32-bit register for signal <timer>.
+    Found 32-bit register for signal <duration_counter>.
+    Found 32-bit register for signal <bit_flip_mask>.
+    Found 32-bit register for signal <fim_duration>.
+    Found 2-bit register for signal <state>.
+    Found 1-bit register for signal <sack_n>.
+    Found 1-bit register for signal <inject_pc_fault>.
+    Found 1-bit register for signal <inject_bit_flip>.
+    Found 1-bit register for signal <inject_mem_flip>.
+    Found finite state machine <FSM_3> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <timer[31]_GND_114_o_sub_29_OUT> created at line 118.
+    Found 32-bit subtractor for signal <duration_counter[31]_GND_114_o_sub_36_OUT> created at line 141.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 228 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <fim_safecore> synthesized.
+
+Synthesizing Unit <wwdt_safecore>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\wwdt_safecore.v".
+WARNING:Xst:647 - Input <addr<9:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <reg_ctrl>.
+    Found 32-bit register for signal <reg_win_min>.
+    Found 32-bit register for signal <reg_win_max>.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit register for signal <prescale_cnt>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <wd_reset_n>.
+    Found 1-bit register for signal <sack_n>.
+    Found 1-bit register for signal <irq_out>.
+    Found 1-bit register for signal <kick_pending>.
+    Found 1-bit register for signal <kick_write_d>.
+    Found finite state machine <FSM_4> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit subtractor for signal <counter[31]_GND_117_o_sub_35_OUT> created at line 188.
+    Found 32-bit adder for signal <prescale_cnt[31]_GND_117_o_add_36_OUT> created at line 190.
+    Found 32-bit comparator greater for signal <n0042> created at line 185
+    Found 32-bit comparator greater for signal <reg_win_min[31]_counter[31]_LessThan_40_o> created at line 199
+    Found 32-bit comparator greater for signal <counter[31]_GND_117_o_LessThan_45_o> created at line 208
+    Found 32-bit comparator greater for signal <GND_117_o_counter[31]_LessThan_46_o> created at line 208
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 165 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <wwdt_safecore> synthesized.
+
+Synthesizing Unit <monitor_slave_MUSER_Top_Level>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf".
+WARNING:Xst:653 - Signal <STATUS<23:5>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <monitor_slave_MUSER_Top_Level> synthesized.
+
+Synthesizing Unit <LA_MUSER_Top_Level>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf".
+    Summary:
+	no macro.
+Unit <LA_MUSER_Top_Level> synthesized.
+
+Synthesizing Unit <RAM32x32>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\RAM32x32.v".
+    Found 32x32-bit single-port RAM <Mram_memory_array> for signal <memory_array>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <RAM32x32> synthesized.
+
+Synthesizing Unit <CNT5>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CNT5.v".
+    Found 5-bit register for signal <CNT_S>.
+    Found 5-bit adder for signal <CNT_S[4]_GND_123_o_add_3_OUT> created at line 35.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+Unit <CNT5> synthesized.
+
+Synthesizing Unit <MUX5bit>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MUX5bit.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MUX5bit> synthesized.
+
+Synthesizing Unit <reg5>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\reg5.v".
+    Found 5-bit register for signal <data_out_reg>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+Unit <reg5> synthesized.
+
+Synthesizing Unit <slvaeAO_MUSER_Top_Level>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf".
+    Summary:
+	no macro.
+Unit <slvaeAO_MUSER_Top_Level> synthesized.
+
+Synthesizing Unit <MUX4_32bit>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MUX4_32bit.v".
+    Summary:
+	inferred   3 Multiplexer(s).
+Unit <MUX4_32bit> synthesized.
+
+Synthesizing Unit <BUF5>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\BUF5.v".
+    Summary:
+	no macro.
+Unit <BUF5> synthesized.
+
+Synthesizing Unit <id_num>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\id_num.v".
+    Summary:
+	no macro.
+Unit <id_num> synthesized.
+
+Synthesizing Unit <DLX_MUSER_Top_Level>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf".
+    Summary:
+	no macro.
+Unit <DLX_MUSER_Top_Level> synthesized.
+
+Synthesizing Unit <control_unit_MUSER_Top_Level>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf".
+    Summary:
+	no macro.
+Unit <control_unit_MUSER_Top_Level> synthesized.
+
+Synthesizing Unit <CONTROL_SDLXSM>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CONTROL_SDLXSM.v".
+        INIT = 0
+        FETCH = 1
+        DECODE = 2
+        ALU = 3
+        SHIFT = 4
+        ALUI = 5
+        TESTI = 6
+        ADDRESSCMP = 7
+        JR = 8
+        SAVEPC = 9
+        BRANCH = 10
+        WBR = 11
+        WBI = 12
+        LOAD = 13
+        COPYGPR2MDR = 15
+        JALR = 16
+        BTAKEN = 17
+        COPYMDR2C = 18
+        STORE = 19
+        HALT = 20
+WARNING:Xst:647 - Input <IR<25:6>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 5-bit register for signal <curr_state>.
+    Found finite state machine <FSM_5> for signal <curr_state>.
+    -----------------------------------------------------------------------
+    | States             | 20                                             |
+    | Transitions        | 43                                             |
+    | Inputs             | 9                                              |
+    | Outputs            | 24                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | internal_reset (positive)                      |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <CONTROL_SDLXSM> synthesized.
+
+Synthesizing Unit <MAC>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MAC.v".
+        WAIT4REQ = 0
+        WAIT4ACK = 1
+        NEXT = 2
+    Found 2-bit register for signal <prev_state>.
+    Found 2-bit register for signal <curr_state>.
+    Found finite state machine <FSM_6> for signal <curr_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | reset (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   2 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <MAC> synthesized.
+
+Synthesizing Unit <FULL_DATAPATH_MUSER_Top_Level>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf".
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf" line 799: Output port <imm> of the instance <XLXI_26> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <FULL_DATAPATH_MUSER_Top_Level> synthesized.
+
+Synthesizing Unit <MUX32bit>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MUX32bit.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MUX32bit> synthesized.
+
+Synthesizing Unit <REG32RST>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\RE32RST.v".
+    Found 32-bit register for signal <REG>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <REG32RST> synthesized.
+
+Synthesizing Unit <SHIFTER_env>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\SHIFTER_env.v".
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <SHIFTER_env> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\ALU.v".
+    Summary:
+	inferred   6 Multiplexer(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <CSA32>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CSA32.v".
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CSA32.v" line 31: Output port <OFL> of the instance <adder_low> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CSA32.v" line 40: Output port <OFL> of the instance <adder_high0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\CSA32.v" line 49: Output port <OFL> of the instance <adder_high1> is unconnected or connected to loadless signal.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <CSA32> synthesized.
+
+Synthesizing Unit <ADSU16>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\ADSU16.v".
+    Found 17-bit adder for signal <n0022> created at line 18.
+    Found 17-bit adder for signal <result> created at line 18.
+    Found 1-bit comparator equal for signal <A[15]_B_op[15]_equal_5_o> created at line 25
+    Found 1-bit comparator not equal for signal <n0007> created at line 25
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <ADSU16> synthesized.
+
+Synthesizing Unit <comparator>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\comparator.v".
+    Summary:
+	no macro.
+Unit <comparator> synthesized.
+
+Synthesizing Unit <MMU>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MMU.v".
+WARNING:Xst:647 - Input <AO<31:24>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <MMU> synthesized.
+
+Synthesizing Unit <GPR_env_MUSER_Top_Level>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\DLX_hierarchy.vhf".
+    Summary:
+	no macro.
+Unit <GPR_env_MUSER_Top_Level> synthesized.
+
+Synthesizing Unit <AEQZ>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\AEQZ.v".
+    Summary:
+	no macro.
+Unit <AEQZ> synthesized.
+
+Synthesizing Unit <IR_env>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\IR_env.v".
+    Found 32-bit register for signal <IR>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <IR_env> synthesized.
+
+Synthesizing Unit <MUX3bit>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\MUX3bit.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MUX3bit> synthesized.
+
+Synthesizing Unit <const_011>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\const_011.v".
+    Summary:
+	no macro.
+Unit <const_011> synthesized.
+
+Synthesizing Unit <PC_ENVm>.
+    Related source file is "C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\PC_ENVm.v".
+    Found 32-bit register for signal <PC_OUT>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <PC_ENVm> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 32x32-bit single-port RAM                             : 4
+# Adders/Subtractors                                   : 21
+ 14-bit adder                                          : 2
+ 14-bit subtractor                                     : 2
+ 17-bit adder                                          : 6
+ 2-bit subtractor                                      : 2
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 4
+ 4-bit subtractor                                      : 1
+ 5-bit adder                                           : 1
+ 6-bit subtractor                                      : 1
+ 9-bit subtractor                                      : 1
+# Registers                                            : 95
+ 1-bit register                                        : 41
+ 13-bit register                                       : 2
+ 14-bit register                                       : 3
+ 16-bit register                                       : 2
+ 2-bit register                                        : 9
+ 3-bit register                                        : 1
+ 32-bit register                                       : 25
+ 4-bit register                                        : 3
+ 40-bit register                                       : 2
+ 5-bit register                                        : 3
+ 6-bit register                                        : 2
+ 8-bit register                                        : 1
+ 9-bit register                                        : 1
+# Latches                                              : 32
+ 1-bit latch                                           : 32
+# Comparators                                          : 12
+ 1-bit comparator equal                                : 3
+ 1-bit comparator not equal                            : 3
+ 13-bit comparator not equal                           : 1
+ 2-bit comparator not equal                            : 1
+ 32-bit comparator greater                             : 4
+# Multiplexers                                         : 348
+ 1-bit 2-to-1 multiplexer                              : 239
+ 10-bit 2-to-1 multiplexer                             : 1
+ 13-bit 2-to-1 multiplexer                             : 1
+ 13-bit 7-to-1 multiplexer                             : 1
+ 14-bit 2-to-1 multiplexer                             : 19
+ 16-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 10
+ 21-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 43
+ 4-bit 2-to-1 multiplexer                              : 4
+ 40-bit 2-to-1 multiplexer                             : 5
+ 5-bit 2-to-1 multiplexer                              : 6
+ 6-bit 2-to-1 multiplexer                              : 10
+ 9-bit 2-to-1 multiplexer                              : 1
+# Tristates                                            : 16
+ 1-bit tristate buffer                                 : 16
+# FSMs                                                 : 7
+# Xors                                                 : 35
+ 1-bit xor10                                           : 4
+ 1-bit xor15                                           : 6
+ 1-bit xor2                                            : 10
+ 1-bit xor3                                            : 2
+ 1-bit xor32                                           : 1
+ 1-bit xor39                                           : 1
+ 1-bit xor4                                            : 1
+ 1-bit xor6                                            : 3
+ 16-bit xor2                                           : 3
+ 32-bit xor2                                           : 3
+ 6-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1293 - FF/Latch <ba_r_0> has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ba_r_1> has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <activeBank_r_0> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <activeBank_r_1> (without init value) has a constant value of 0 in block <u5>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <address_in_s_21> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_22> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_23> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_25> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_26> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_27> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_28> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_29> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_30> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <address_in_s_31> of sequential type is unconnected in block <u2>.
+WARNING:Xst:2677 - Node <vectorToDut_o_38> of sequential type is unconnected in block <u1>.
+WARNING:Xst:2677 - Node <vectorToDut_o_39> of sequential type is unconnected in block <u1>.
+WARNING:Xst:2677 - Node <fim_ctrl_3> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_4> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_5> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_6> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_7> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_8> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_9> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_10> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_11> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_12> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_13> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_14> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_15> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_16> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_17> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_18> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_19> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_20> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_21> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_22> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_23> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_24> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_25> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_26> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_27> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_28> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_29> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_30> of sequential type is unconnected in block <XLXI_FIM>.
+WARNING:Xst:2677 - Node <fim_ctrl_31> of sequential type is unconnected in block <XLXI_FIM>.
+
+Synthesizing (advanced) Unit <CNT5>.
+The following registers are absorbed into counter <CNT_S>: 1 register on signal <CNT_S>.
+Unit <CNT5> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Interface_Ctrl_U>.
+The following registers are absorbed into counter <Rst_proc.resetCnt_v>: 1 register on signal <Rst_proc.resetCnt_v>.
+Unit <Interface_Ctrl_U> synthesized (advanced).
+
+Synthesizing (advanced) Unit <SdramCntl_U>.
+The following registers are absorbed into counter <timer_r>: 1 register on signal <timer_r>.
+The following registers are absorbed into counter <nopCntr_r>: 1 register on signal <nopCntr_r>.
+Unit <SdramCntl_U> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fim_safecore>.
+The following registers are absorbed into counter <timer>: 1 register on signal <timer>.
+The following registers are absorbed into counter <duration_counter>: 1 register on signal <duration_counter>.
+Unit <fim_safecore> synthesized (advanced).
+
+Synthesizing (advanced) Unit <wwdt_safecore>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <wwdt_safecore> synthesized (advanced).
+WARNING:Xst:2677 - Node <address_in_s_21> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_22> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_23> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_25> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_26> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_27> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_28> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_29> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_30> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <address_in_s_31> of sequential type is unconnected in block <Interface_Ctrl_U>.
+WARNING:Xst:2677 - Node <fim_ctrl_3> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_4> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_5> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_6> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_7> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_8> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_9> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_10> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_11> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_12> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_13> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_14> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_15> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_16> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_17> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_18> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_19> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_20> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_21> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_22> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_23> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_24> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_25> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_26> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_27> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_28> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_29> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_30> of sequential type is unconnected in block <fim_safecore>.
+WARNING:Xst:2677 - Node <fim_ctrl_31> of sequential type is unconnected in block <fim_safecore>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 32x32-bit single-port distributed RAM                 : 4
+# Adders/Subtractors                                   : 11
+ 14-bit adder                                          : 1
+ 14-bit subtractor                                     : 1
+ 17-bit adder carry in                                 : 3
+ 2-bit subtractor                                      : 2
+ 32-bit adder                                          : 1
+ 32-bit subtractor                                     : 1
+ 6-bit subtractor                                      : 1
+ 9-bit subtractor                                      : 1
+# Counters                                             : 7
+ 14-bit down counter                                   : 1
+ 14-bit up counter                                     : 1
+ 32-bit down counter                                   : 3
+ 4-bit down counter                                    : 1
+ 5-bit up counter                                      : 1
+# Registers                                            : 931
+ Flip-Flops                                            : 931
+# Comparators                                          : 12
+ 1-bit comparator equal                                : 3
+ 1-bit comparator not equal                            : 3
+ 13-bit comparator not equal                           : 1
+ 2-bit comparator not equal                            : 1
+ 32-bit comparator greater                             : 4
+# Multiplexers                                         : 413
+ 1-bit 2-to-1 multiplexer                              : 312
+ 13-bit 2-to-1 multiplexer                             : 1
+ 13-bit 7-to-1 multiplexer                             : 1
+ 14-bit 2-to-1 multiplexer                             : 17
+ 16-bit 2-to-1 multiplexer                             : 2
+ 2-bit 2-to-1 multiplexer                              : 10
+ 21-bit 2-to-1 multiplexer                             : 2
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 38
+ 4-bit 2-to-1 multiplexer                              : 4
+ 40-bit 2-to-1 multiplexer                             : 5
+ 5-bit 2-to-1 multiplexer                              : 6
+ 6-bit 2-to-1 multiplexer                              : 10
+ 9-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 7
+# Xors                                                 : 35
+ 1-bit xor10                                           : 4
+ 1-bit xor15                                           : 6
+ 1-bit xor2                                            : 10
+ 1-bit xor3                                            : 2
+ 1-bit xor32                                           : 1
+ 1-bit xor39                                           : 1
+ 1-bit xor4                                            : 1
+ 1-bit xor6                                            : 3
+ 16-bit xor2                                           : 3
+ 32-bit xor2                                           : 3
+ 6-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_23/u2/FSM_0> on signal <curr_state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 100   | 100
+ 011   | 011
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_23/u3/FSM_1> on signal <curr_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 11    | 11
+ 10    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_23/u5/FSM_2> on signal <state_r[1:3]> with user encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ initwait    | 000
+ initpchg    | 001
+ initsetmode | 010
+ initrfsh    | 011
+ rw          | 100
+ activate    | 101
+ refreshrow  | 110
+ selfrefresh | 111
+-------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_FIM/FSM_3> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_WWDT/FSM_4> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 010   | 010
+ 100   | 100
+ 011   | 011
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_70/XLXI_6/XLXI_1/FSM_5> on signal <curr_state[1:20]> with one-hot encoding.
+-------------------------------
+ State | Encoding
+-------------------------------
+ 00000 | 00000000000000000001
+ 00001 | 00000000000000000010
+ 00010 | 00000000000000000100
+ 10100 | 00000000000000001000
+ 01010 | 00000000000000010000
+ 01001 | 00000000000000100000
+ 01000 | 00000000000001000000
+ 00111 | 00000000000010000000
+ 00110 | 00000000000100000000
+ 00101 | 00000000001000000000
+ 00100 | 00000000010000000000
+ 00011 | 00000000100000000000
+ 01011 | 00000001000000000000
+ 01100 | 00000010000000000000
+ 01101 | 00000100000000000000
+ 01111 | 00001000000000000000
+ 10000 | 00010000000000000000
+ 10001 | 00100000000000000000
+ 10010 | 01000000000000000000
+ 10011 | 10000000000000000000
+-------------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <XLXI_70/XLXI_6/XLXI_2/FSM_6> on signal <curr_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+WARNING:Xst:1293 - FF/Latch <cmd_r_0> has a constant value of 0 in block <SdramCntl_U>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cmd_r_1> has a constant value of 0 in block <SdramCntl_U>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cmd_r_5> has a constant value of 0 in block <SdramCntl_U>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <XLXI_45/REG_24> of sequential type is unconnected in block <FULL_DATAPATH_MUSER_Top_Level>.
+WARNING:Xst:2677 - Node <XLXI_45/REG_25> of sequential type is unconnected in block <FULL_DATAPATH_MUSER_Top_Level>.
+WARNING:Xst:2677 - Node <XLXI_45/REG_26> of sequential type is unconnected in block <FULL_DATAPATH_MUSER_Top_Level>.
+WARNING:Xst:2677 - Node <XLXI_45/REG_27> of sequential type is unconnected in block <FULL_DATAPATH_MUSER_Top_Level>.
+WARNING:Xst:2677 - Node <XLXI_45/REG_28> of sequential type is unconnected in block <FULL_DATAPATH_MUSER_Top_Level>.
+WARNING:Xst:2677 - Node <XLXI_45/REG_29> of sequential type is unconnected in block <FULL_DATAPATH_MUSER_Top_Level>.
+WARNING:Xst:2677 - Node <XLXI_45/REG_30> of sequential type is unconnected in block <FULL_DATAPATH_MUSER_Top_Level>.
+WARNING:Xst:2677 - Node <XLXI_45/REG_31> of sequential type is unconnected in block <FULL_DATAPATH_MUSER_Top_Level>.
+
+Optimizing unit <Top_Level_safecore> ...
+
+Optimizing unit <Interface_Ctrl_U> ...
+WARNING:Xst:1294 - Latch <DO_s_31> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_30> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_27> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_29> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_28> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_26> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_25> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_24> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_23> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_20> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_22> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_21> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_19> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_18> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_17> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_16> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_13> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_15> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_14> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_12> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_11> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_10> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_9> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_6> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_8> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_7> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_5> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_4> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_3> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_2> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_1> is equivalent to a wire in block <Interface_Ctrl_U>.
+WARNING:Xst:1294 - Latch <DO_s_0> is equivalent to a wire in block <Interface_Ctrl_U>.
+
+Optimizing unit <sdram_adapter_U> ...
+
+Optimizing unit <HostIoToDut_U> ...
+
+Optimizing unit <HostIoHdrScanner> ...
+
+Optimizing unit <slvaeAO_MUSER_Top_Level> ...
+
+Optimizing unit <LA_MUSER_Top_Level> ...
+
+Optimizing unit <fim_safecore> ...
+
+Optimizing unit <wwdt_safecore> ...
+
+Optimizing unit <FULL_DATAPATH_MUSER_Top_Level> ...
+
+Optimizing unit <IR_env> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <PC_ENVm> ...
+
+Optimizing unit <CONTROL_SDLXSM> ...
+
+Optimizing unit <MAC> ...
+
+Optimizing unit <secded_bus_wrapper> ...
+
+Optimizing unit <secded_decoder> ...
+WARNING:Xst:1710 - FF/Latch <XLXI_23/u5/activeBank_r_1> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_23/u5/activeBank_r_0> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_23/u5/ba_r_1> has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_23/u5/ba_r_0> has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <XLXI_23/u5/opBegun_r> of sequential type is unconnected in block <Top_Level_safecore>.
+WARNING:Xst:2677 - Node <XLXI_23/u1/vectorToDut_o_39> of sequential type is unconnected in block <Top_Level_safecore>.
+WARNING:Xst:2677 - Node <XLXI_23/u1/vectorToDut_o_38> of sequential type is unconnected in block <Top_Level_safecore>.
+WARNING:Xst:2677 - Node <XLXI_FIM/sack_n> of sequential type is unconnected in block <Top_Level_safecore>.
+WARNING:Xst:2677 - Node <XLXI_WWDT/irq_out> of sequential type is unconnected in block <Top_Level_safecore>.
+WARNING:Xst:2677 - Node <XLXI_WWDT/sack_n> of sequential type is unconnected in block <Top_Level_safecore>.
+INFO:Xst:2399 - RAMs <XLXI_34/XLXI_1/XLXI_1/Mram_memory_array32>, <XLXI_34/XLXI_1/XLXI_1/Mram_memory_array30> are equivalent, second RAM is removed
+INFO:Xst:2399 - RAMs <XLXI_34/XLXI_1/XLXI_1/Mram_memory_array31>, <XLXI_34/XLXI_1/XLXI_1/Mram_memory_array29> are equivalent, second RAM is removed
+WARNING:Xst:1710 - FF/Latch <XLXI_WWDT/prescale_cnt_10> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_11> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_12> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_13> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_14> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_15> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_16> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_17> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_18> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_19> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_20> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_21> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_22> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_23> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_24> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_25> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_26> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_27> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_28> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_29> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_30> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_WWDT/prescale_cnt_31> (without init value) has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <XLXI_23/u2/Rst_proc.resetCnt_v_3> has a constant value of 0 in block <Top_Level_safecore>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <XLXI_23/u5/sDataDir_r> in Unit <Top_Level_safecore> is equivalent to the following FF/Latch, which will be removed : <XLXI_23/u5/wrTimer_r_1> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top_Level_safecore, actual ratio is 14.
+FlipFlop XLXI_70/XLXI_6/XLXI_1/curr_state_FSM_FFd10 has been replicated 1 time(s)
+FlipFlop XLXI_70/XLXI_6/XLXI_1/curr_state_FSM_FFd12 has been replicated 1 time(s)
+FlipFlop XLXI_70/XLXI_6/XLXI_1/curr_state_FSM_FFd13 has been replicated 1 time(s)
+FlipFlop XLXI_70/XLXI_6/XLXI_1/curr_state_FSM_FFd17 has been replicated 1 time(s)
+FlipFlop XLXI_70/XLXI_6/XLXI_1/curr_state_FSM_FFd18 has been replicated 1 time(s)
+FlipFlop XLXI_70/XLXI_6/XLXI_1/curr_state_FSM_FFd20 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1060
+ Flip-Flops                                            : 1060
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Top_Level_safecore.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 2133
+#      AND2                        : 3
+#      AND3                        : 2
+#      GND                         : 1
+#      INV                         : 76
+#      LUT1                        : 26
+#      LUT2                        : 72
+#      LUT3                        : 200
+#      LUT4                        : 222
+#      LUT5                        : 231
+#      LUT6                        : 757
+#      MUXCY                       : 268
+#      MUXF7                       : 29
+#      OR2                         : 2
+#      OR5                         : 1
+#      VCC                         : 1
+#      XORCY                       : 242
+# FlipFlops/Latches                : 1061
+#      FD                          : 70
+#      FDC                         : 123
+#      FDCE                        : 346
+#      FDE                         : 116
+#      FDP                         : 10
+#      FDPE                        : 17
+#      FDR                         : 27
+#      FDRE                        : 346
+#      FDS                         : 3
+#      FDSE                        : 2
+#      ODDR2                       : 1
+# RAMS                             : 126
+#      RAM32X1S                    : 126
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 40
+#      IBUFG                       : 1
+#      IOBUF                       : 16
+#      OBUF                        : 23
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# Logical                          : 2
+#      NAND2                       : 2
+# Others                           : 1
+#      BSCAN_SPARTAN6              : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx25ftg256-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1061  out of  30064     3%  
+ Number of Slice LUTs:                 1710  out of  15032    11%  
+    Number used as Logic:              1584  out of  15032    10%  
+    Number used as Memory:              126  out of   3664     3%  
+       Number used as RAM:              126
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   2142
+   Number with an unused Flip Flop:    1081  out of   2142    50%  
+   Number with an unused LUT:           432  out of   2142    20%  
+   Number of fully used LUT-FF pairs:   629  out of   2142    29%  
+   Number of unique control sets:        46
+
+IO Utilization: 
+ Number of IOs:                          41
+ Number of bonded IOBs:                  41  out of    186    22%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+----------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)            | Load  |
+-----------------------------------+----------------------------------+-------+
+sdClkFb_i                          | BUFGP                            | 1057  |
+fpgaClk_i                          | DCM_SP:CLKFX                     | 1     |
+fpgaClk_i                          | DCM_SP:CLKFX180                  | 1     |
+XLXI_23/u1/drck_s                  | NONE(XLXI_23/u1/vectorToDut_o_37)| 129   |
+-----------------------------------+----------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 11.630ns (Maximum Frequency: 85.982MHz)
+   Minimum input arrival time before clock: 4.665ns
+   Maximum output required time after clock: 5.782ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sdClkFb_i'
+  Clock period: 11.630ns (frequency: 85.982MHz)
+  Total number of paths / destination ports: 534284 / 2769
+-------------------------------------------------------------------------
+Delay:               11.630ns (Levels of Logic = 8)
+  Source:            XLXI_34/XLXI_1/XLXI_9 (FF)
+  Destination:       XLXI_23/u2/data_out_s_2 (FF)
+  Source Clock:      sdClkFb_i rising
+  Destination Clock: sdClkFb_i rising
+
+  Data Path: XLXI_34/XLXI_1/XLXI_9 to XLXI_23/u2/data_out_s_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.525   0.681  XLXI_34/XLXI_1/XLXI_9 (XLXI_34/XLXI_1/XLXN_35)
+     INV:I->O              1   0.710   1.137  XLXI_34/XLXI_1/XLXI_8 (XLXI_34/XLXI_1/XLXN_31)
+     NAND2:I0->O           1   0.254   1.112  XLXI_34/XLXI_1/XLXI_34 (XLXI_34/XLXI_1/XLXN_63)
+     OR2:I1->O             3   0.279   1.196  XLXI_34/XLXI_1/XLXI_27 (XLXI_34/XLXI_1/la_run)
+     AND2:I1->O           45   0.279   1.737  XLXI_34/XLXI_1/XLXI_19 (XLXI_34/XLXI_1/la_we)
+     LUT6:I5->O           20   0.254   1.285  XLXI_34/XLXI_1/XLXI_5/Mmux_O11 (XLXI_34/XLXI_1/XLXN_17<0>)
+     RAM32X1S:A0->O        1   0.235   0.682  XLXI_34/XLXI_1/XLXI_1/Mram_memory_array3 (XLXI_34/D_OUT<2>)
+     LUT6:I5->O            1   0.254   0.682  XLXI_23/u2/Mmux_Data_i_mem[31]_RD_i[31]_mux_51_OUT231_F (N819)
+     LUT5:I4->O            1   0.254   0.000  XLXI_23/u2/Mmux_Data_i_mem[31]_RD_i[31]_mux_51_OUT2311 (XLXI_23/u2/Data_i_mem[31]_RD_i[31]_mux_51_OUT<2>)
+     FDRE:D                    0.074          XLXI_23/u2/data_out_s_2
+    ----------------------------------------
+    Total                     11.630ns (3.118ns logic, 8.512ns route)
+                                       (26.8% logic, 73.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'XLXI_23/u1/drck_s'
+  Clock period: 7.452ns (frequency: 134.184MHz)
+  Total number of paths / destination ports: 3726 / 282
+-------------------------------------------------------------------------
+Delay:               7.452ns (Levels of Logic = 4)
+  Source:            XLXI_23/u1/UHdrScanner/hdrRcvd_r (FF)
+  Destination:       XLXI_23/u1/UHdrScanner/pyldCntr_r_30 (FF)
+  Source Clock:      XLXI_23/u1/drck_s rising
+  Destination Clock: XLXI_23/u1/drck_s rising
+
+  Data Path: XLXI_23/u1/UHdrScanner/hdrRcvd_r to XLXI_23/u1/UHdrScanner/pyldCntr_r_30
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            36   0.525   1.863  XLXI_23/u1/UHdrScanner/hdrRcvd_r (XLXI_23/u1/UHdrScanner/hdrRcvd_r)
+     LUT6:I2->O            1   0.254   1.137  XLXI_23/u1/UHdrScanner/inShiftDr_i_hdrRcvd_r_OR_71_o1 (XLXI_23/u1/UHdrScanner/inShiftDr_i_hdrRcvd_r_OR_71_o1)
+     LUT6:I0->O            1   0.254   0.910  XLXI_23/u1/UHdrScanner/inShiftDr_i_hdrRcvd_r_OR_71_o7 (XLXI_23/u1/UHdrScanner/inShiftDr_i_hdrRcvd_r_OR_71_o7)
+     LUT4:I1->O           41   0.235   1.947  XLXI_23/u1/UHdrScanner/inShiftDr_i_hdrRcvd_r_OR_71_o8 (XLXI_23/u1/UHdrScanner/inShiftDr_i_hdrRcvd_r_OR_71_o)
+     LUT4:I0->O            1   0.254   0.000  XLXI_23/u1/UHdrScanner/Mmux_GND_51_o_PWR_18_o_mux_5_OUT110 (XLXI_23/u1/UHdrScanner/GND_51_o_PWR_18_o_mux_5_OUT<0>)
+     FD:D                      0.074          XLXI_23/u1/UHdrScanner/pyldCntr_r_0
+    ----------------------------------------
+    Total                      7.452ns (1.596ns logic, 5.856ns route)
+                                       (21.4% logic, 78.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sdClkFb_i'
+  Total number of paths / destination ports: 74 / 74
+-------------------------------------------------------------------------
+Offset:              4.665ns (Levels of Logic = 1)
+  Source:            XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser:DRCK (PAD)
+  Destination:       XLXI_23/u2/data_in_s_31 (FF)
+  Destination Clock: sdClkFb_i rising
+
+  Data Path: XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser:DRCK to XLXI_23/u2/data_in_s_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:DRCK  134   0.000   2.590  XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser (XLXI_23/u1/drck_s)
+     LUT5:I1->O           32   0.254   1.519  XLXI_23/u2/_n0395_inv1 (XLXI_23/u2/_n0395_inv)
+     FDE:CE                    0.302          XLXI_23/u2/data_in_s_0
+    ----------------------------------------
+    Total                      4.665ns (0.556ns logic, 4.109ns route)
+                                       (11.9% logic, 88.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'XLXI_23/u1/drck_s'
+  Total number of paths / destination ports: 126 / 43
+-------------------------------------------------------------------------
+Offset:              3.487ns (Levels of Logic = 2)
+  Source:            XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser:RESET (PAD)
+  Destination:       XLXI_23/u1/UHdrScanner/pyldCntr_r_30 (FF)
+  Destination Clock: XLXI_23/u1/drck_s rising
+
+  Data Path: XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser:RESET to XLXI_23/u1/UHdrScanner/pyldCntr_r_30
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:RESET    1   0.000   0.958  XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser (XLXI_23/u1/USimple.UBscanHostIo/bscanReset_s)
+     LUT4:I0->O           41   0.254   1.947  XLXI_23/u1/UHdrScanner/inShiftDr_i_hdrRcvd_r_OR_71_o8 (XLXI_23/u1/UHdrScanner/inShiftDr_i_hdrRcvd_r_OR_71_o)
+     LUT4:I0->O            1   0.254   0.000  XLXI_23/u1/UHdrScanner/Mmux_GND_51_o_PWR_18_o_mux_5_OUT110 (XLXI_23/u1/UHdrScanner/GND_51_o_PWR_18_o_mux_5_OUT<0>)
+     FD:D                      0.074          XLXI_23/u1/UHdrScanner/pyldCntr_r_0
+    ----------------------------------------
+    Total                      3.487ns (0.582ns logic, 2.905ns route)
+                                       (16.7% logic, 83.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sdClkFb_i'
+  Total number of paths / destination ports: 49 / 33
+-------------------------------------------------------------------------
+Offset:              5.782ns (Levels of Logic = 2)
+  Source:            XLXI_23/u5/sDataDir_r (FF)
+  Destination:       sdData_io<15> (PAD)
+  Source Clock:      sdClkFb_i rising
+
+  Data Path: XLXI_23/u5/sDataDir_r to sdData_io<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              7   0.525   0.909  XLXI_23/u5/sDataDir_r (XLXI_23/u5/sDataDir_r)
+     INV:I->O             16   0.255   1.181  XLXI_23/u5/sDataDir_r_inv1_INV_0 (XLXI_23/u5/sDataDir_r_inv)
+     IOBUF:T->IO               2.912          sdData_io_15_IOBUF (sdData_io<15>)
+    ----------------------------------------
+    Total                      5.782ns (3.692ns logic, 2.090ns route)
+                                       (63.9% logic, 36.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'XLXI_23/u1/drck_s'
+  Total number of paths / destination ports: 10 / 1
+-------------------------------------------------------------------------
+Offset:              3.905ns (Levels of Logic = 2)
+  Source:            XLXI_23/u1/UHdrScanner/hdrRcvd_r (FF)
+  Destination:       XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser:TDO (PAD)
+  Source Clock:      XLXI_23/u1/drck_s rising
+
+  Data Path: XLXI_23/u1/UHdrScanner/hdrRcvd_r to XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser:TDO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            36   0.525   2.042  XLXI_23/u1/UHdrScanner/hdrRcvd_r (XLXI_23/u1/UHdrScanner/hdrRcvd_r)
+     LUT6:I0->O            2   0.254   0.834  XLXI_23/u1/UHdrScanner/active_o (XLXI_23/u1/active_s)
+     LUT2:I0->O            0   0.250   0.000  XLXI_23/u1/Mmux_tdo_s11 (XLXI_23/u1/tdo_s)
+    BSCAN_SPARTAN6:TDO         0.000          XLXI_23/u1/USimple.UBscanHostIo/spartan6_bscan.UBscanUser
+    ----------------------------------------
+    Total                      3.905ns (1.029ns logic, 2.876ns route)
+                                       (26.4% logic, 73.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock XLXI_23/u1/drck_s
+-----------------+---------+---------+---------+---------+
+                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------+---------+---------+---------+---------+
+XLXI_23/u1/drck_s|    7.452|         |         |         |
+sdClkFb_i        |    2.724|         |         |         |
+-----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sdClkFb_i
+-----------------+---------+---------+---------+---------+
+                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------+---------+---------+---------+---------+
+XLXI_23/u1/drck_s|   10.115|         |         |         |
+sdClkFb_i        |   11.630|         |         |         |
+-----------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 20.84 secs
+ 
+--> 
+
+Total memory usage is 4538020 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  237 (   0 filtered)
+Number of infos    :   49 (   0 filtered)
+

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.ncd
+OUTFILE=C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore\Top_Level_safecore.bit
+FAMILY=Spartan6
+PART=xc6slx25-2ftg256
+WORKINGDIR=C:\Users\administrator.CLS-210-PC\Desktop\SafeCore_Oron_Ariel\New_folder\new_safecore
+LICENSE=WebPack
+USER_INFO=210840218_0_0_270

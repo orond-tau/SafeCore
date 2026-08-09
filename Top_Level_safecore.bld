@@ -1,0 +1,40 @@
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -nt timestamp -uc remote_sources/_/_/lab
+files/IO_LOGIC_U/XuLA2.ucf -p xc6slx25-ftg256-2 Top_Level_safecore.ngc
+Top_Level_safecore.ngd
+
+Reading NGO file
+"C:/Users/administrator.CLS-210-PC/Desktop/SafeCore_Oron_Ariel/New_folder/new_sa
+fecore/Top_Level_safecore.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "remote_sources/_/_/lab
+files/IO_LOGIC_U/XuLA2.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 4414492 kilobytes
+
+Writing NGD file "Top_Level_safecore.ngd" ...
+Total REAL time to NGDBUILD completion:  4 sec
+Total CPU time to NGDBUILD completion:   4 sec
+
+Writing NGDBUILD log file "Top_Level_safecore.bld"...
