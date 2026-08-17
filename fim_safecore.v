@@ -3,39 +3,39 @@
 module fim_safecore (
     // RESA Bus Interface
     input wire clk,
-    input wire rst_n,           // System Reset
-    input wire [9:0] addr,      // Address offset
-    input wire [31:0] data_in,  // Data from CPU
-    output reg [31:0] data_out, // Data to CPU
-    input wire wr_in_n,         // Write Enable (Active Low)
-    input wire card_sel,        // Chip Select
-    output reg sack_n,          // Slave Acknowledge
+    input wire rst_n,           // system Reset
+    input wire [9:0] addr,      // address offset
+    input wire [31:0] data_in,  // data from CPU
+    output reg [31:0] data_out, // data to CPU
+    input wire wr_in_n,         // write Enable (Active Low)
+    input wire card_sel,        // chip Select
+    output reg sack_n,          // slave Acknowledge
 
-    // Fault Injection Hooks (Probes)
-    output reg inject_pc_fault,     // Freeze PC Logic
+    // fault injection hooks
+    output reg inject_pc_fault,     // freeze PC Logic
     output reg inject_bit_flip,     // XOR manipulation on ALU datapath output
-    output reg inject_mem_flip,     // Codeword corruption on SECDED read path
-    output reg [31:0] bit_flip_mask // Which bits to flip
+    output reg inject_mem_flip,     // codeword corruption on SECDED read path
+    output reg [31:0] bit_flip_mask // which bits to flip
 );
 
-    // --- Register Map ---
-    // Offset 0x0: Control Register
+    // register Map
+    // offset 0x0: Control Register
     //   Bit 0: Enable Fault Injection (Starts Timer)
     //   Bit 1: Fault Type (0 = PC Freeze, 1 = Bit Flip)
     //   Bit 2: Bit-Flip Target (0 = ALU datapath, 1 = memory/SECDED read path)
     //          (only meaningful when Bit 1 = 1)
     reg [31:0] fim_ctrl;    
     
-    // Offset 0x4: Mask Register (For Bit-Flip)
+    // offset 0x4: Mask Register (For Bit-Flip)
     reg [31:0] fim_mask;    
     
-    // Offset 0x8: Trigger Delay (How many clock cycles to wait before injecting)
+    // offset 0x8: Trigger Delay (How many clock cycles to wait before injecting)
     reg [31:0] fim_delay;   
     
-    // Offset 0xC: Fault Duration (How many clock cycles the fault lasts. 32'hFFFFFFFF for stuck-at)
+    // offset 0xC: Fault Duration (How many clock cycles the fault lasts. 32'hFFFFFFFF for stuck-at)
     reg [31:0] fim_duration; 
 
-    // --- Internal State & Counters ---
+    // internal state & counters
     reg [31:0] timer;
     reg [31:0] duration_counter;
     reg [1:0] state;
@@ -45,24 +45,24 @@ module fim_safecore (
     localparam S_INJECTING = 2'd2;
     localparam S_DONE      = 2'd3;
 
-    // --- Bus Interface Logic ---
+    // bus Interface Logic
     wire write_req = card_sel && (~wr_in_n);
     wire read_req  = card_sel && (wr_in_n);
 
-    // Handshake: Immediate Acknowledge
+    // handshake: immediate ack
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) sack_n <= 1'b1;
         else if (card_sel) sack_n <= 1'b0;
         else sack_n <= 1'b1;
     end
 
-    // Memory Mapped I/O - Write
+    // memory mapped I/O - write
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             fim_ctrl <= 32'b0;
             fim_mask <= 32'b0;
             fim_delay <= 32'b0;
-            fim_duration <= 32'd1; // Default duration: 1 cycle pulse
+            fim_duration <= 32'd1; // the default duration is 1 cycle pulse
         end else if (write_req) begin
             case (addr[3:0])
                 4'h0: fim_ctrl <= data_in;
@@ -73,7 +73,7 @@ module fim_safecore (
         end
     end
 
-    // Memory Mapped I/O - Read
+    // memory mapped I/O - read
     always @(*) begin
         data_out = 32'h0;
         if (read_req) begin
@@ -87,7 +87,7 @@ module fim_safecore (
         end
     end
 
-    // --- Fault Injection State Machine ---
+    // Fault Injection State Machine
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state <= S_IDLE;
@@ -98,7 +98,7 @@ module fim_safecore (
             inject_mem_flip <= 1'b0;
             bit_flip_mask <= 32'b0;
         end else begin
-            // Default continuous assignments
+            // default continuous assignments
             bit_flip_mask <= fim_mask;
             
             case (state)
@@ -106,7 +106,7 @@ module fim_safecore (
                     inject_pc_fault <= 1'b0;
                     inject_bit_flip <= 1'b0;
                     inject_mem_flip <= 1'b0;
-                    if (fim_ctrl[0]) begin // Enable bit triggered
+                    if (fim_ctrl[0]) begin // enable bit triggered
                         timer <= fim_delay;
                         duration_counter <= fim_duration;
                         state <= S_WAITING;
@@ -120,23 +120,22 @@ module fim_safecore (
                         state <= S_INJECTING;
                     end
                     
-                    // Abort condition
+                    // abort the condition
                     if (!fim_ctrl[0]) state <= S_IDLE;
                 end
 
                 S_INJECTING: begin
-                    // Assert the requested fault based on fim_ctrl[1] (type) and,
-                    // for a bit-flip, fim_ctrl[2] (target: ALU vs memory path).
+                    // assert the requested fault based on fim_ctrl[1] and for a bit-flip, fim_ctrl[2]
                     if (fim_ctrl[1] == 1'b0) begin
                         inject_pc_fault <= 1'b1;
                     end else begin
                         if (fim_ctrl[2] == 1'b0)
                             inject_bit_flip <= 1'b1;   // ALU output XOR
                         else
-                            inject_mem_flip <= 1'b1;   // SECDED read-path corruption
+                            inject_mem_flip <= 1'b1;   // SECDED read-path corruptioning
                     end
 
-                    // Handle fault duration
+                    // handle fault duration
                     if (duration_counter > 0) begin
                         duration_counter <= duration_counter - 1;
                     end else begin
@@ -146,7 +145,7 @@ module fim_safecore (
                         state <= S_DONE;
                     end
                     
-                    // Abort condition
+                    // abort condition
                     if (!fim_ctrl[0]) state <= S_IDLE;
                 end
 
@@ -154,7 +153,7 @@ module fim_safecore (
                     inject_pc_fault <= 1'b0;
                     inject_bit_flip <= 1'b0;
                     inject_mem_flip <= 1'b0;
-                    // Wait for CPU to clear enable bit before restarting
+                    // wait for CPU to clear enable bit before restarting
                     if (!fim_ctrl[0]) state <= S_IDLE;
                 end
             endcase
