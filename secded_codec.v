@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 
 // ======================================================================
-// Production-Ready SECDED Encoder (32-bit Data -> 39-bit Encoded)
 // Standard Hamming (38,32) + 1 Global Parity Bit for Double Error Detection
 // ======================================================================
 module secded_encoder (
@@ -11,7 +10,7 @@ module secded_encoder (
     wire [5:0] p;
     wire       p_global;
 
-    // עצי XOR מחושבים מראש לפי מטריצת המינג - תזמון אופטימלי בחומרה
+    // pre calculated using a hamming matrix + XOR trees
     assign p[0] = data_in[0] ^ data_in[1] ^ data_in[3] ^ data_in[4] ^ data_in[6] ^ 
                   data_in[8] ^ data_in[10] ^ data_in[11] ^ data_in[13] ^ data_in[15] ^ 
                   data_in[17] ^ data_in[19] ^ data_in[21] ^ data_in[23] ^ data_in[25] ^ 
@@ -37,15 +36,15 @@ module secded_encoder (
 
     assign p[5] = data_in[26] ^ data_in[27] ^ data_in[28] ^ data_in[29] ^ data_in[30] ^ data_in[31];
 
-    // זוגיות גלובלית (XOR על כל הנתונים וביטי המינג)
+    // global parity =, which is a XOR on all data and the hamming bits
     assign p_global = ^data_in ^ ^p;
 
-    // השרשור הסופי שנכתב לזיכרון
+    // final data writing
     assign data_encoded = {p_global, p, data_in};
 endmodule
 
 // ======================================================================
-// Production-Ready SECDED Decoder (39-bit Encoded -> 32-bit Data)
+// the SECDED Decoder (39-bit Encoded -> 32-bit Data)
 // ======================================================================
 module secded_decoder (
     input  wire [38:0] data_encoded_in,
@@ -63,7 +62,7 @@ module secded_decoder (
     assign d    = data_encoded_in[31:0];
     assign p_in = data_encoded_in[37:32];
 
-    // חישוב מחדש של הזוגיות על הנתונים שהתקבלו
+    // re calculating all of the data we got
     assign p_calc[0] = d[0] ^ d[1] ^ d[3] ^ d[4] ^ d[6] ^ d[8] ^ d[10] ^ d[11] ^ d[13] ^ d[15] ^ d[17] ^ d[19] ^ d[21] ^ d[23] ^ d[25] ^ d[26] ^ d[28] ^ d[30];
     assign p_calc[1] = d[0] ^ d[2] ^ d[3] ^ d[5] ^ d[6] ^ d[9] ^ d[10] ^ d[12] ^ d[13] ^ d[16] ^ d[17] ^ d[20] ^ d[21] ^ d[24] ^ d[25] ^ d[27] ^ d[28] ^ d[31];
     assign p_calc[2] = d[1] ^ d[2] ^ d[3] ^ d[7] ^ d[8] ^ d[9] ^ d[10] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[22] ^ d[23] ^ d[24] ^ d[25] ^ d[29] ^ d[30] ^ d[31];
@@ -71,11 +70,11 @@ module secded_decoder (
     assign p_calc[4] = d[11] ^ d[12] ^ d[13] ^ d[14] ^ d[15] ^ d[16] ^ d[17] ^ d[18] ^ d[19] ^ d[20] ^ d[21] ^ d[22] ^ d[23] ^ d[24] ^ d[25];
     assign p_calc[5] = d[26] ^ d[27] ^ d[28] ^ d[29] ^ d[30] ^ d[31];
 
-    // הסינדרום אומר לנו איפה השגיאה
+    // using the syndrome to point on the error
     assign syndrome = p_in ^ p_calc;
     
-    // סינדרום גלובלי: XOR של כל 39 הביטים שהתקבלו.
-    // אם הוא 1 - יש מספר אי זוגי של שגיאות (שגיאה בודדת). אם הוא 0 - יש זוגי (2 שגיאות או תקין).
+    // global syndrome which is a XOR on all of the data we got
+    // getting 1 means we have one bit error, getting 0 meas we have two bit error (or a valid data)
     assign global_syndrome = ^data_encoded_in; 
 
     always @(*) begin
@@ -85,15 +84,15 @@ module secded_decoder (
 
         if (syndrome == 6'b0) begin
             if (global_syndrome != 1'b0) begin
-                // הסינדרום 0 אבל הגלובלי 1: השגיאה היא בביט הזוגיות הגלובלי עצמו. הנתונים תקינים!
+                // the syndrome is 0 yet the global is 1 which means the error is in the parity - data is good
                 err_single_corrected = 1'b1; 
             end
         end else begin
             if (global_syndrome != 1'b0) begin
-                // סינדרום שונה מאפס וזוגיות גלובלית שגויה -> שגיאה בביט בודד. מתקנים!
+                // the syndrome is not 0 and the global is wrong as well which meanswe have a single bit error - data is good corrupt so we fix it
                 err_single_corrected = 1'b1;
                 
-                // ממפים את ערך הסינדרום ישירות לביט שהתהפך והופכים אותו בחזרה.
+                // mapping the syndrome to the bit and flipping it to the correct value
                 case (syndrome)
                     6'd3:  data_corrected_out[0]  = ~d[0];
                     6'd5:  data_corrected_out[1]  = ~d[1];
@@ -127,12 +126,10 @@ module secded_decoder (
                     6'd36: data_corrected_out[29] = ~d[29];
                     6'd37: data_corrected_out[30] = ~d[30];
                     6'd38: data_corrected_out[31] = ~d[31];
-                    // אם קיבלנו מספר שהוא חזקה של 2 (1, 2, 4, 8, 16, 32),
-                    // השגיאה היא באחד מביטי הזוגיות של המינג. הנתונים עצמם תקינים לחלוטין.
                     default: ; 
                 endcase
             end else begin
-                // סינדרום שונה מאפס אבל הזוגיות הגלובלית תקינה -> יש בדיוק שתי שגיאות! כשל קריטי.
+                // syndrome is not 0 yet parity is good - double bit error!
                 err_fatal_double = 1'b1;
             end
         end
