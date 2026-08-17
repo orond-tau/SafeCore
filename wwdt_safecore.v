@@ -1,29 +1,10 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// wwdt_safecore.v  (WINDOWED, PRESCALED -- committee build)
-//
-// Windowed Watchdog Timer SafeCore.
-//
 // Register map (byte offsets, decoded from addr[3:0]):
 //   0x0  reg_ctrl     write nonzero -> arm (enter S_LOAD)
 //   0x4  reg_kick     write 0xAA55AA55 to service the watchdog
 //   0x8  reg_win_min  kick is only valid once counter has decremented to <= win_min
 //   0xC  reg_win_max  countdown start value (timeout window, in TICKS)
-//
-// TIME BASE (PRESCALER):
-//   The countdown decrements once every PRESCALE clock cycles (one "tick"),
-//   NOT every clock. A windowed watchdog is serviced by software, whose kick
-//   cadence is measured in instructions / memory transactions -- tens of clocks
-//   apart -- not single cycles. Scaling the window into ticks puts win_min/
-//   win_max in the same time domain as the kicking loop, so a software kick can
-//   deterministically land inside the window. (Set PRESCALE=1 for the original
-//   cycle-accurate behaviour.)
-//
-// KICK LATCH:
-//   reg_kick self-clears one cycle after a write, so the magic value is visible
-//   for a single clock. To guarantee the FSM observes every kick regardless of
-//   bus timing, a magic write SETS a sticky kick_pending flag; the FSM consumes
-//   and clears it. This removes the write-vs-FSM race on reg_kick.
 //
 // Behaviour:
 //   S_IDLE:  reg_ctrl=0; wait for arming.
@@ -48,18 +29,13 @@ module wwdt_safecore (
     output reg         sack_n,
     output reg         irq_out,
     output reg         wd_reset_n,
-    // DEBUG: expose captured registers directly (combinational, always valid)
+    // debug addition - expose captured registers directly
     output wire [31:0] dbg_ctrl,
     output wire [31:0] dbg_win_min,
     output wire [31:0] dbg_win_max,
     output wire [31:0] dbg_state
 );
 
-    // ---- Tunable parameters ------------------------------------------------
-    // PRESCALE: clock cycles per countdown tick. Chosen so one tick comfortably
-    // exceeds one software kick-loop iteration (a few stores = tens of clocks).
-    // 1024 ticks at 60 MHz ~= 17 us per tick -- a software loop kicks easily
-    // within a window of a few ticks, while the no-kick timeout still fires fast.
     localparam PRESCALE      = 32'd1024;
     localparam KICK_MAGIC    = 32'hAA55AA55;
     localparam IRQ_THRESHOLD = 32'd4;     // assert IRQ when within 4 ticks of timeout
@@ -77,9 +53,7 @@ module wwdt_safecore (
 
     // Sticky kick flag: set when a magic kick is written, cleared by the FSM.
     reg        kick_pending;
-    // Edge-detect for kick_write: a kick store spans several clocks (multi-cycle
-    // SDRAM handshake), but it is ONE logical kick. Register kick_write and act
-    // only on its rising edge so a single store = exactly one kick event.
+    // Edge-detect for kick_write: a kick store spans several clocks (multi-cycle SDRAM handshake), but it is ONE logical kick. Register kick_write and act only on its rising edge so a single store = exactly one kick event.
     reg        kick_write_d;
 
     localparam S_IDLE       = 3'd0;
@@ -88,26 +62,26 @@ module wwdt_safecore (
     localparam S_FAULT_FAST = 3'd3;
     localparam S_FAULT_SLOW = 3'd4;
 
-    // DEBUG readback taps (diagnostic only)
+    // debug - readback taps (diagnostic use only)
     assign dbg_ctrl    = reg_ctrl;
     assign dbg_win_min = reg_win_min;
     assign dbg_win_max = reg_win_max;
-    assign dbg_state   = {16'hBEEF, 13'b0, state};  // known-good BEEF build
+    assign dbg_state   = {16'hBEEF, 13'b0, state};  // BEEF as a success output
 
     wire write_req = card_sel && (~wr_in_n);
     wire read_req  = card_sel && ( wr_in_n);
 
-    // A magic kick is being written this cycle (combinational detect).
+    // a magic kick is being written this cycle
     wire kick_write = write_req && (addr[3:0] == 4'h4) && (data_in == KICK_MAGIC);
 
-    // Slave acknowledge (high default, low while selected)
+    // slave ack
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n)        sack_n <= 1'b1;
         else if (card_sel) sack_n <= 1'b0;
         else               sack_n <= 1'b1;
     end
 
-    // Register write logic (data_in is MDO, the DLX write bus)
+    // register write logic (data_in is MDO, the DLX write bus)
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             reg_ctrl    <= 32'd0;
@@ -122,7 +96,7 @@ module wwdt_safecore (
                 4'hC: reg_win_max <= data_in;
             endcase
         end else begin
-            reg_kick <= 32'b0;  // self-clearing (kept for readback visibility)
+            reg_kick <= 32'b0;  // self clearing
         end
     end
 
@@ -140,10 +114,7 @@ module wwdt_safecore (
         end
     end
 
-    // ---- WWDT core FSM --------------------------------------------------
-    // wd_reset_n is explicitly assigned IN EVERY STATE (no top-of-block
-    // default). In S_FAULT_FAST/SLOW it stays 0 every cycle until rst_n clears
-    // the FSM, holding CONTROL_SDLXSM's internal_reset asserted.
+    // WWDT core FSM
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             state        <= S_IDLE;
@@ -154,8 +125,7 @@ module wwdt_safecore (
             kick_pending <= 1'b0;
             kick_write_d <= 1'b0;
         end else begin
-            // Sticky kick capture: latch ONLY on the rising edge of kick_write,
-            // so one store (which spans several clocks) is exactly one kick.
+            // sticky kick capture, latch only on the rising edge of kick_write, so one store (which spans several clocks) is exactly one kick.
             kick_write_d <= kick_write;
             if (kick_write && !kick_write_d)
                 kick_pending <= 1'b1;
@@ -174,14 +144,14 @@ module wwdt_safecore (
                     irq_out      <= 1'b0;
                     counter      <= reg_win_max;
                     prescale_cnt <= 32'b0;
-                    kick_pending <= 1'b0;          // fresh window, drop stale kicks
+                    kick_pending <= 1'b0;          // fresh window so drop stale kicks
                     state        <= S_COUNT;
                 end
 
                 S_COUNT: begin
                     wd_reset_n <= 1'b1;
 
-                    // ---- prescaled countdown: one tick per PRESCALE clocks ----
+                    // prescaled countdown: one tick per prescale clocks
                     if (prescale_cnt >= (PRESCALE - 1)) begin
                         prescale_cnt <= 32'b0;
                         if (counter > 32'b0)
@@ -190,16 +160,13 @@ module wwdt_safecore (
                         prescale_cnt <= prescale_cnt + 32'b1;
                     end
 
-                    // ---- kick handling (windowed) ----
-                    // Consume a pending kick. Valid only once the counter has
-                    // decremented into the window (counter <= win_min); a kick
-                    // while still above the window is an early/illegal kick.
+                    // kick handling (windowed)
                     if (kick_pending) begin
                         kick_pending <= 1'b0;
                         if (counter > reg_win_min)
                             state <= S_FAULT_FAST;     // kicked too early
                         else
-                            state <= S_LOAD;           // valid kick -> reload
+                            state <= S_LOAD;           // valid kick so reload
                     end else if (counter == 32'b0) begin
                         state <= S_FAULT_SLOW;         // timeout
                     end
